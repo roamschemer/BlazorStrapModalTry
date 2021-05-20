@@ -1,0 +1,25 @@
+﻿@page "/"
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<BSButton Color="Color.Primary" @onclick="@(() => FullHeight.Show())">Full height modal</BSButton>
+<BSModal IsFullHeight="true" @ref="FullHeight">
+    <BSModalHeader OnClick="@(() => FullHeight.Hide())">Modal title</BSModalHeader>
+    <BSModalBody>
+        <p><input /></p>
+        <p><input /></p>
+        <p><input /></p>
+        <p><input /></p>
+        <p><input /></p>
+    </BSModalBody>
+    <BSModalFooter>
+        <BSButton Color="Color.Primary" @onclick="@(() => FullHeight.Hide())">Do Something</BSButton>
+        <BSButton Color="Color.Secondary" @onclick="@(() => FullHeight.Hide())">Cancel</BSButton>
+    </BSModalFooter>
+</BSModal>
+
+@code {
+    BSModal FullHeight { get; set; }
+}
